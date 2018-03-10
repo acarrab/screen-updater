@@ -13,7 +13,7 @@ if(isset($_POST["submit"]))
     echo "No file was sent...";
     $uploadOk = 0;
   } else {
-    echo "File is good! - " . $check["mime"] . ".";
+    echo "File is good! - " . $_["time"] . ".";
     
     $uploadOk = 1;
     
@@ -22,9 +22,9 @@ if(isset($_POST["submit"]))
     
 
     $time_marker = fopen("last_upload.txt", "w")  or die('Cannot open file:  '.$my_file);
-    fwrite($time_marker, $target_file . "?time=" .time());
+    fwrite($time_marker, $target_file . "?time=" . time());
     fclose($time_marker);
   }
 }
-//header('Location: upload.html');
+header('Location: upload.html');
 ?>
