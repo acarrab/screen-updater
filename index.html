@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body style="padding: 0em; margin: 0em; background-color: black; overflow: hidden;">
+    <img id="screen-image" width="1920" height="1080" />
+  </body>
+
+
+  <script>
+   var previousResult = null;
+   $(document).ready(function(){
+     function keepUpdatingImage() {
+       $.get("last_upload.txt?time=" + new Date().getTime(), function(result) {
+	 var changedTime=result.replace(/.*\?time=/, ""),
+	     currentTime=Math.floor((new Date().getTime())/1000);
+	 if (result !== previousResult) {
+	   console.log("updating images")
+
+	   
+	   $("#screen-image").attr("src", result)
+	   previousResult=result;
+	 }
+       });
+       setTimeout(keepUpdatingImage, 2000)
+     }
+     keepUpdatingImage();
+   });
+  </script>
+</html>

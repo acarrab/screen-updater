@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Screen Upload</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<form action="upload.php" method="post" enctype="multipart/form-data" style="text-align: center;">
+  <div class="form-group">
+    <label for="fileToUpload">Select image to update to screen</label>
+    <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload" />
+  </div>
+  <div class="form-group">
+    <label for="time">Time to Update</label>
+    <input id="time" name="time" type="time" />      
+  </div>
+  <button name="submit" type="submit" value="Upload Image" class="btn btn-default">Submit</button>
+</form>
+  
+</body>
+</html>
